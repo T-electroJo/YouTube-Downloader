@@ -1,1 +1,2 @@
-start python3.exe -m pip install -r requirements.txt
+start python.exe -m pip install pytube --upgrade
+start python.exe -m pip install -r requirements.txt
