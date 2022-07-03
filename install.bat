@@ -1,1 +1,1 @@
-start python.exe -m pip install -r requirements.txt
+start python3.exe -m pip install -r requirements.txt
