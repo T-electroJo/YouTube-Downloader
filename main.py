@@ -100,8 +100,8 @@ def main():
             output_path="./temp/",
             filename=save_path[1][:-3]+"mp4"
         )
-        print(Fore.YELLOW + "\n  Converting downloaded video to '.mp3'...", end="\r")
         if mode == "mp3":
+            print(Fore.YELLOW + "\n  Converting downloaded video to '.mp3'...", end="\r")
             video = importlib.import_module("moviepy.editor").VideoFileClip(f"./temp/{save_path[1][:-4]}.mp4")
             video.audio.write_audiofile(full_path, verbose=False, logger=None)
             video.close()
@@ -116,20 +116,20 @@ def main():
                 os.remove("./temp/" + _file)
             time.sleep(0.5)
             print(Fore.GREEN + "  Done, deleting temporary files...    ", end="\r")
+        time.sleep(0.5)
+        print(Fore.GREEN + "  All tasks successfully finished.   ")
+        time.sleep(0.75)
+        print(Fore.GREEN + "\n  Clear screen or exit? [c|e]: ", end="")
+        msg = input(Fore.RED)
+        if not msg.lower() == "c":
+            print(Fore.RED + "\n  Exiting by user in 2 seconds...", end="\r")
+            time.sleep(2)
+            print(Fore.RED + "  Exiting...                      ")
             time.sleep(0.5)
-            print(Fore.GREEN + "  All tasks successfully finished.   ")
-            time.sleep(0.75)
-            print(Fore.GREEN + "\n  Clear screen or exit? [c|e]: ", end="")
-            msg = input(Fore.RED)
-            if not msg.lower() == "c":
-                print(Fore.RED + "\n  Exiting by user in 2 seconds...", end="\r")
-                time.sleep(2)
-                print(Fore.RED + "  Exiting...                      ")
-                time.sleep(0.5)
-                exit()
-            else:
-                clear()
-                return True
+            exit()
+        else:
+            clear()
+            return True
     except KeyboardInterrupt:
         exit()
     except Exception as e:
