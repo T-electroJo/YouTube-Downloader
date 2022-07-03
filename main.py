@@ -116,6 +116,8 @@ def main():
                 os.remove("./temp/" + _file)
             time.sleep(0.5)
             print(Fore.GREEN + "  Done, deleting temporary files...    ", end="\r")
+        else:
+            print()
         time.sleep(0.5)
         print(Fore.GREEN + "  All tasks successfully finished.   ")
         time.sleep(0.75)
