@@ -1,6 +1,4 @@
 import json
-
-import moviepy.editor
 from colorama import Fore, init
 from pytube import YouTube
 import os
