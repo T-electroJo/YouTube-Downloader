@@ -1,1 +1,1 @@
-start python3.exe main.py
+start python.exe main.py
