@@ -97,8 +97,8 @@ def main():
         time.sleep(2)
         print(Fore.YELLOW + f"  Downloading '{obj.title}.mp4'...                                 ", end="\r")
         obj.streams.get_highest_resolution().download(
-            output_path="./temp/",
-            filename=save_path[1][:-3]+"mp4"
+            output_path="./temp/" if mode == "mp3" else full_path,
+            filename=(save_path[1][:-3]+"mp4") if mode == "mp3" else save_path[1]
         )
         if mode == "mp3":
             print(Fore.YELLOW + "\n  Converting downloaded video to '.mp3'...", end="\r")
