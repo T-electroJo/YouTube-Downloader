@@ -50,7 +50,7 @@ def main():
             obj = YouTube(link)
             obj.register_on_progress_callback(update_callback)
         except Exception as e:
-            print(Fore.RED + f"Error: {e}")
+            print(Fore.RED + "\n\n  Error: {}".format("\n  ".join(str(e).split("\n"))))
             for i in range(6):
                 print(Fore.RED + f"  This program will exit in {6-(i+1)} second{'.' if i == 4 else 's.'}.. ", end="\r")
                 time.sleep(1)
@@ -135,7 +135,7 @@ def main():
     except KeyboardInterrupt:
         exit()
     except Exception as e:
-        print(f"\n\n{Fore.RED}{e}")
+        print("\n\n  {}\n".format(Fore.RED + "\n  ".join(str(e).split("\n"))))
         os.system("pause")
 
 
